@@ -1,0 +1,12 @@
+import java.util.Arrays;
+
+public class AlphabetSorting {
+    public static void main(String[] args) {
+        String alphabets = "bacdefg";
+        char[] chars = alphabets.toCharArray();
+        Arrays.sort(chars);
+        String sortedAlphabets = new String(chars);
+        System.out.println("Original Alphabets: " + alphabets);
+        System.out.println("Sorted Alphabets: " + sortedAlphabets);
+    }
+}
