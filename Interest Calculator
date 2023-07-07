@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class InterestCalculator {
+    private double principal;
+    private double rate;
+    private double time;
+    public void setValues(double principal, double rate, double time) {
+        this.principal = principal;
+        this.rate = rate;
+        this.time = time;
+    }
+    public double calculateSimpleInterest() {
+        double simpleInterest = (principal * rate * time) / 100;
+        return simpleInterest;
+    }
+    public double calculateCompoundInterest() {
+        double compoundInterest = principal * Math.pow((1 + rate / 100), time) - principal;
+        return compoundInterest;
+    }
+}
+public class InterestCalculation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the principal amount: ");
+        double principal = scanner.nextDouble();
+        System.out.print("Enter the interest rate: ");
+        double rate = scanner.nextDouble();
+        System.out.print("Enter the time (in years): ");
+        double time = scanner.nextDouble();
+        InterestCalculator calculator = new InterestCalculator();
+        calculator.setValues(principal, rate, time);
+
+        double simpleInterest = calculator.calculateSimpleInterest();
+        double compoundInterest = calculator.calculateCompoundInterest();
+
+        System.out.println("Simple Interest: " + simpleInterest);
+        System.out.println("Compound Interest: " + compoundInterest);
+
+        scanner.close();
+    }
+}
