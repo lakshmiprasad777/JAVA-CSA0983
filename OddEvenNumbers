@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class OddEvenNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        int[] numbers = new int[size];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        System.out.println("Odd numbers:");
+        printOddNumbers(numbers);
+
+        System.out.println("Even numbers:");
+        printEvenNumbers(numbers);
+
+        scanner.close();
+    }
+
+    public static void printOddNumbers(int[] arr) {
+        for (int num : arr) {
+            if (num % 2 != 0) {
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    public static void printEvenNumbers(int[] arr) {
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println();
+    }
+}
