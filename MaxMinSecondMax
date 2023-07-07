@@ -1,0 +1,53 @@
+public class MaxMinSecondMax {
+    public static void main(String[] args) {
+        int[] numbers = {5, 2, 8, 12, 1, 6};
+
+        int maximum = findMaximum(numbers);
+        int minimum = findMinimum(numbers);
+        int secondMaximum = findSecondMaximum(numbers);
+
+        System.out.println("Maximum element: " + maximum);
+        System.out.println("Minimum element: " + minimum);
+        System.out.println("Second maximum element: " + secondMaximum);
+    }
+
+    public static int findMaximum(int[] arr) {
+        int maximum = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maximum) {
+                maximum = arr[i];
+            }
+        }
+
+        return maximum;
+    }
+
+    public static int findMinimum(int[] arr) {
+        int minimum = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < minimum) {
+                minimum = arr[i];
+            }
+        }
+
+        return minimum;
+    }
+
+    public static int findSecondMaximum(int[] arr) {
+        int maximum = arr[0];
+        int secondMaximum = Integer.MIN_VALUE;
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maximum) {
+                secondMaximum = maximum;
+                maximum = arr[i];
+            } else if (arr[i] > secondMaximum && arr[i] < maximum) {
+                secondMaximum = arr[i];
+            }
+        }
+
+        return secondMaximum;
+    }
+}
