@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+class Adder {
+    private int num1;
+    private int num2;
+
+    public void setNumbers(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    public int getSum() {
+        return num1 + num2;
+    }
+}
+
+public class SumOfTwoNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        Adder adder = new Adder();
+        adder.setNumbers(num1, num2);
+        int sum = adder.getSum();
+
+        System.out.println("Sum of " + num1 + " and " + num2 + " is: " + sum);
+
+        scanner.close();
+    }
+}
