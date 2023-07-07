@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class HomeAddress {
+    public static void main(String[] args) {
+        String name = "John Smith";
+        String fatherName = "David Smith";
+        int doorNumber = 10;
+        String streetName = "Main Street";
+        String areaName = "Central Park";
+        String city = "New York"; 
+        System.out.println("Name: " + name);
+        System.out.println("Father's Name: " + fatherName);
+        System.out.println("Door Number: " + doorNumber);
+        System.out.println("Street Name: " + streetName);
+        System.out.println("Area Name: " + areaName);
+        System.out.println("City: " + city);
+    }
+}
